@@ -22,7 +22,7 @@ flowchart LR
     BE <-- "WebSocket, PCM 24 kHz" --> API[OpenAI Realtime API]
 ```
 
-> **Status: early, and the Realtime backend has not been run against the live OpenAI API yet.** It is written from the API docs and tested against a local stand-in, so expect to fix details on first contact. The Echo side (network, calls, audio processing) has been used in real conversations on an Echo Dot 3, with a private backend.
+> **Status: early, and the Realtime backend has not been run against the live OpenAI API yet.** It is written from the API docs and tested against a local stand-in, so expect to fix details on first contact. The Echo side (network, calls, audio processing) has been used in real conversations on an Echo Dot 3, with ChatGPT's voice mode as a private backend.
 
 ## How it works
 
@@ -78,7 +78,9 @@ Each session logs its levels and they appear under `last_session` in `/status`.
 
 ## Other backends
 
-Backends implement the small [`VoiceBackend`](src/echo_voice_bridge/backends/base.py) interface. Only the OpenAI Realtime API is included. Driving a consumer chat product through a browser session also works in principle, but it is not included and I do not support it. Check your provider's terms before trying.
+Backends implement the small [`VoiceBackend`](src/echo_voice_bridge/backends/base.py) interface. Only the OpenAI Realtime API is included.
+
+The bridge also works with ChatGPT's voice mode (GPT-Live) through a browser session. That is how I run it at home. It is not included here, I don't explain how to set it up, and I don't support it. Check the provider's terms before trying anything like that.
 
 ## Limits
 
