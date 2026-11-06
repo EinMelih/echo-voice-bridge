@@ -1,0 +1,13 @@
+services:
+  echo-voice-bridge:
+    build: .
+    container_name: echo-voice-bridge
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 10s
+    network_mode: host   # the Echo network uses UDP broadcast (28930); call audio uses UDP 28932
+    env_file: .env
+    environment:
+      EVB_STATE_DIR: /state
+    volumes:
+      - ./state:/state
