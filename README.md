@@ -22,7 +22,7 @@ flowchart LR
     BE <-- "WebSocket, PCM 24 kHz" --> API[OpenAI Realtime API]
 ```
 
-> **Status:** early. The Echo side (network, calls, audio) has been used in real conversations on an Echo Dot 3. The included Realtime backend is covered by tests against a local stand-in; see the tests and issues for what has been verified against the live API.
+> **Status: early, and the Realtime backend has not been run against the live OpenAI API yet.** It is written from the API docs and tested against a local stand-in, so expect to fix details on first contact. The Echo side (network, calls, audio processing) has been used in real conversations on an Echo Dot 3, with a private backend.
 
 ## How it works
 
